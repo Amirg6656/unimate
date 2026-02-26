@@ -1,0 +1,117 @@
+/* src/App.css */
+.app {
+  height: 100vh;
+}
+
+.layout {
+  display: flex;
+  height: 100%;
+}
+
+/* سایدبار */
+.sidebar {
+  width: var(--sidebar-width);
+  background-color: white;
+  border-right: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-header {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.sidebar-header h2 {
+  color: var(--primary-color);
+  font-size: 24px;
+}
+
+.sidebar-nav {
+  padding: 20px 0;
+  flex: 1;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+}
+
+.sidebar-nav li {
+  padding: 12px 20px;
+  margin: 4px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  color: var(--gray-color);
+}
+
+.sidebar-nav li:hover {
+  background-color: #f3f4f6;
+}
+
+.sidebar-nav li.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* محتوای اصلی */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+/* هدر */
+.header {
+  height: var(--header-height);
+  background-color: white;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+.header h1 {
+  font-size: 24px;
+  color: var(--dark-color);
+}
+
+/* محتوا */
+.content {
+  padding: 30px;
+  flex: 1;
+}
+
+/* ریسپانسیو */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    left: -100%;
+    top: 0;
+    bottom: 0;
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .header {
+    padding: 0 20px;
+  }
+
+  .content {
+    padding: 20px;
+  }
+}
