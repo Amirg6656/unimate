@@ -91,10 +91,19 @@ function LoginForm() {
           </button>
         </form>
 
-        <div className="login-links">
-          <a href="#" className="forgot-password">فراموشی رمز عبور</a>
-          <a href="#" className="create-account">ساخت حساب کاربری</a>
-        </div>
+<div className="login-links">
+  <a href="#" className="forgot-password">فراموشی رمز عبور</a>
+  <a 
+    href="#" 
+    className="create-account"
+    onClick={(e) => {
+      e.preventDefault();
+      navigate(`/register/${role}`);
+    }}
+  >
+    ساخت حساب کاربری
+  </a>
+</div>
       </div>
     </div>
   );
