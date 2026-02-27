@@ -123,7 +123,7 @@
 /* باکس سمت چپ - فرم ثبت نام */
 .left-box {
   flex: 1;
-  background: linear-gradient(180deg, #ffffff11, #ffffff3a);;
+  background: linear-gradient(180deg, #ffffff11, #ffffff3a);
   display: flex;
   align-items: center;
   border: 1px solid white;
@@ -152,41 +152,6 @@
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-/* کانتینر دکمه بازگشت - تنظیم شده برای جای درست */
-.back-btn-container {
-  position: absolute;
-  top: -15px;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  padding-left: 20px;
-  z-index: 10;
-}
-
-.back-btn {
-  background: white;
-  border: 1px solid #e2e8f0;
-  color: #1e293b;
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-  padding: 8px 18px;
-  border-radius: 30px;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.back-btn:hover {
-  background-color: #f1f5f9;
-  border-color: #94a3b8;
-  transform: translateX(-3px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .register-title {
@@ -288,24 +253,47 @@
   border-right: 3px solid #ef4444;
 }
 
-.register-btn {
-  background: linear-gradient(135deg, #004ebc, #05287b);
-  color: white;
-  border: none;
-  padding: 10px;
+/* دکمه‌های فرم - بازگشت و ثبت نام کنار هم */
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.action-btn {
+  flex: 1;
+  padding: 12px;
   font-size: 15px;
   font-weight: 600;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  margin-top: 10px;
+  text-align: center;
+  border: none;
   text-transform: uppercase;
   letter-spacing: 1px;
-  width: 100%;
 }
 
-.register-btn:hover {
+.back-action-btn {
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.back-action-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: white;
+  transform: translateY(-2px);
+}
+
+.register-action-btn {
+  background: linear-gradient(135deg, #004ebc, #05287b);
+  color: white;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.register-action-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15);
   background: linear-gradient(135deg, #4f80f5, #002fff);
@@ -333,10 +321,6 @@
     font-size: 16px;
   }
   
-  .university-subtitle {
-    font-size: 13px;
-  }
-  
   .form-wrapper {
     max-width: 350px;
   }
@@ -360,10 +344,14 @@
     font-size: 12px;
   }
   
-  .register-btn {
-    padding: 8px;
+  .form-actions {
+    gap: 10px;
+    margin-top: 15px;
+  }
+  
+  .action-btn {
+    padding: 10px;
     font-size: 14px;
-    margin-top: 8px;
   }
 }
 
@@ -400,10 +388,6 @@
     margin-bottom: 8px;
   }
 
-  .university-subtitle {
-    font-size: 13px;
-  }
-
   .left-box {
     padding: 25px 20px;
     min-width: auto;
@@ -411,16 +395,6 @@
 
   .form-wrapper {
     max-width: 400px;
-  }
-
-  .back-btn-container {
-    top: 15px;
-    right: 20px;
-  }
-  
-  .back-btn {
-    padding: 6px 16px;
-    font-size: 12px;
   }
 
   .register-title {
@@ -443,6 +417,10 @@
   .form-group input,
   .form-group select {
     padding: 8px 12px;
+  }
+  
+  .form-actions {
+    gap: 10px;
   }
 }
 
@@ -475,26 +453,12 @@
     line-height: 1.3;
   }
   
-  .university-subtitle {
-    font-size: 12px;
-  }
-  
   .left-box {
     padding: 20px 18px;
   }
   
   .form-wrapper {
     max-width: 100%;
-  }
-  
-  .back-btn-container {
-    top: 12px;
-    right: 15px;
-  }
-  
-  .back-btn {
-    padding: 5px 14px;
-    font-size: 11px;
   }
   
   .register-title {
@@ -524,10 +488,14 @@
     font-size: 12px;
   }
   
-  .register-btn {
-    padding: 9px;
+  .form-actions {
+    gap: 10px;
+    margin-top: 15px;
+  }
+  
+  .action-btn {
+    padding: 10px;
     font-size: 14px;
-    margin-top: 8px;
   }
 }
 
@@ -559,26 +527,12 @@
     font-size: 14px;
   }
 
-  .university-subtitle {
-    font-size: 11px;
-  }
-
   .left-box {
     padding: 18px 15px;
   }
 
   .form-wrapper {
     max-width: 100%;
-  }
-
-  .back-btn-container {
-    top: 10px;
-    right: 12px;
-  }
-
-  .back-btn {
-    padding: 4px 12px;
-    font-size: 10px;
   }
 
   .form-row {
@@ -610,12 +564,17 @@
     font-size: 10px;
     padding: 3px 6px;
   }
-
-  .register-btn {
-    padding: 8px;
-    font-size: 13px;
-    margin-top: 6px;
-    border-radius: 6px;
+  
+  .form-actions {
+    flex-direction: column-reverse;
+    gap: 8px;
+    margin-top: 12px;
+  }
+  
+  .action-btn {
+    padding: 10px;
+    font-size: 14px;
+    width: 100%;
   }
 }
 
@@ -636,10 +595,6 @@
   
   .university-title {
     font-size: 22px;
-  }
-  
-  .university-subtitle {
-    font-size: 16px;
   }
   
   .form-wrapper {
@@ -664,8 +619,13 @@
     font-size: 14px;
   }
   
-  .register-btn {
-    padding: 12px;
+  .form-actions {
+    gap: 15px;
+    margin-top: 25px;
+  }
+  
+  .action-btn {
+    padding: 14px;
     font-size: 16px;
   }
 }

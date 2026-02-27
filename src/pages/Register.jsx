@@ -9,7 +9,7 @@ function Register() {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
-    gender: '',
+    username: '',  // تغییر: gender به username
     password: '',
     confirmPassword: '',
     educationLevel: '',
@@ -94,13 +94,6 @@ function Register() {
 
         {/* باکس سمت چپ - فرم ثبت نام */}
         <div className="left-box">
-          {/* دکمه بازگشت - خارج از form-wrapper */}
-          <div className="back-btn-container">
-            <button onClick={goBack} className="back-btn">
-              ← بازگشت
-            </button>
-          </div>
-          
           <div className="form-wrapper">
             <h1 className="register-title">ایجاد حساب کاربری</h1>
             <p className="register-subtitle">لطفا اطلاعات زیر را با دقت وارد کنید</p>
@@ -133,19 +126,17 @@ function Register() {
                 </div>
               </div>
 
-              {/* ردیف دوم: جنسیت - تمام عرض */}
+              {/* ردیف دوم: یوزرنیم - تمام عرض (جایگزین جنسیت) */}
               <div className="form-group full-width">
-                <label>جنسیت</label>
-                <select 
-                  name="gender" 
-                  value={formData.gender} 
+                <label>نام کاربری</label>
+                <input
+                  type="text"
+                  name="username"
+                  value={formData.username}
                   onChange={handleChange}
+                  placeholder="نام کاربری خود را وارد کنید"
                   required
-                >
-                  <option value="">انتخاب کنید</option>
-                  <option value="male">مرد</option>
-                  <option value="female">زن</option>
-                </select>
+                />
               </div>
 
               {/* ردیف سوم: رمز عبور و تکرار رمز عبور */}
@@ -213,10 +204,15 @@ function Register() {
                 />
               </div>
 
-              {/* دکمه ثبت نام */}
-              <button type="submit" className="register-btn">
-                ثبت نام
-              </button>
+              {/* دکمه‌های پایین فرم - بازگشت و ثبت نام */}
+              <div className="form-actions">
+                <button type="button" onClick={goBack} className="action-btn back-action-btn">
+                   ورود
+                </button>
+                <button type="submit" className="action-btn register-action-btn">
+                  ثبت نام
+                </button>
+              </div>
             </form>
           </div>
         </div>
